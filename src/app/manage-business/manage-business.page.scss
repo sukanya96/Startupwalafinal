@@ -1,0 +1,76 @@
+//ion-content{
+    //--background: linear-gradient(#2193b0,#6dd5ed);
+   
+   
+ //  }
+ ion-toolbar,ion-button{
+  --background:#2193b0;
+}
+ion-icon{
+color: black;
+}
+#brief{
+ // background: #0905c2!important;
+   
+      font-size: 20px;
+    }
+.label-text{
+
+  display: block;
+
+
+font-size: 12px;
+  font-style: normal;
+}
+
+//ion-item{
+  //padding: 4px 3px 13px 0px;
+  //margin-top: -6px;
+ //}
+ ion-item{
+  //--background: linear-gradient(#2193b0,#6dd5ed);
+  --highlight-color-focused:transparent;
+  --highlight-height:0;
+  --highlight-color-invalid:#000;
+  --highlight-color-valid:#ddd;
+  --min-height:65px;
+ // --padding-start:0;
+  --padding-start: 7%;
+  padding: 1px 0px 9px 0px;
+  margin-top: -14px;
+ 
+}
+ion-label{
+  font-family: system-ui;
+  font-size: 17px;
+  color: black;
+}
+
+
+
+ .sc-ion-searchbar-md-h {
+  --background: var(--ion-background-color, #fff);
+  --border-radius: 2px;
+  --box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --cancel-button-color: var(--ion-color-step-900, #1a1a1a);
+  --clear-button-color: initial;
+  --color: var(--ion-color-step-850, #262626);
+  --icon-color: var(--ion-color-step-600, #666666);
+  padding-top: 9px;
+  padding-bottom: 45px;
+  background: inherit;
+ }
+
+ ion-item{
+  //--background: linear-gradient(#2193b0,#6dd5ed);
+  --highlight-color-focused:transparent;
+  --highlight-height:0;
+  --highlight-color-invalid:#000;
+  --highlight-color-valid:#ddd;
+  --min-height:65px;
+ // --padding-start:0;
+  --padding-start: 3%;
+  padding: 1px 0px 9px 0px;
+//  margin-top: -6px;
+ 
+}

@@ -1,0 +1,231 @@
+<ion-header>
+  <ion-toolbar>
+  <div class="container">
+  <h5>Private Limited Company</h5>
+ </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar class="ion-margin-top"  showCancelButton="never"></ion-searchbar>
+
+<ion-toolbar>
+
+  <ion-segment scrollable
+  value="all"
+
+  mode="Android"
+  [(ngModel)]="segmentModel" 
+  (ionChange)="segmentChanged($event)">
+
+    <ion-segment-button value="Overview">
+      <ion-label>Overview</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Benifits">
+      <ion-label>Benifits </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Pre-requisites">
+      <ion-label>Pre-requisites </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Deliverables">
+      <ion-label>Deliverables</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="FAQs">
+      <ion-label>FAQs</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+<div *ngIf="segmentModel === 'Overview'">
+  <h3 style="text-align: center;">Kickstart Your Pvt.Ltd.!</h3>
+  <h6 style="text-align: center;" >company within 15 days </h6>
+  <h6 style="text-align: center;">at rs 6,999*</h6>
+
+  <br><br><br>
+
+
+  <p style="text-align: center;">Any time.Any where.At Single click</p>
+
+
+  </div>
+  
+  <!--Special Recharge-->
+
+<div *ngIf="segmentModel === 'Benifits'">
+
+  <ion-list>
+    <ion-item>
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      Limited Liability Protection to Directors personal assets
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+     style="margin-left: 150px;color: black;font-size: 15px;">
+    </ion-icon>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+    margin-bottom: 10px;text-align: justify;color: gray;"> 
+    Many times startups need to borrow money and take things on credit. In case of normal Partnerships,
+     Partners personal savings and property would be at risk incase business is not able to repay its loans.
+      In a private limited company, only investment in business is lost, personal assets of the directors are
+       safe.
+    </p></h6>
+    </ion-item>
+
+   
+      <ion-item>
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+        Better image and credibility in Market
+      <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="margin-left: 150px;color: black;font-size: 15px;">
+      </ion-icon>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: justify;color: gray;"> 
+      Private limited company is popular and well known business structure. Corporate Customers, 
+      Vendors and Govt. Agencies prefer to deal with Private Limited Company instead of proprietorship or 
+      normal partnerships.
+      </p></h6>
+      </ion-item>
+
+       <ion-item>
+      <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+       Easy to raise funds and loans
+      <ion-icon [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="margin-left: 150px;color: black;font-size: 15px;">
+      </ion-icon>
+      <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: justify;color: gray;"> 
+     Pvt. Ltd. company enjoys wide options to raise funds through bank loans, Angel Investors, Venture Capitalists, in comparison to LLPs and OPCs.
+      </p></h6>
+      </ion-item>
+
+      <ion-item>
+        <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+          Favorite Business structure for Investors
+        <ion-icon [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+         style="margin-left: 150px;color: black;font-size: 15px;">
+        </ion-icon>
+        <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+        margin-bottom: 10px;text-align: justify;color: gray;"> 
+        Investors love to invest in Private Limited companies as it is well structured and less strings attached.
+         Most important it is very easy to exit from a private limited company.
+        </p></h6>
+        </ion-item>
+
+        <ion-item>
+          <h6 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;font-size: 13px;">
+            Easy to attract Employees
+          <ion-icon [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+           style="margin-left: 150px;color: black;font-size: 15px;">
+          </ion-icon>
+          <p *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+          margin-bottom: 10px;text-align: justify;color: gray;"> 
+         For startups putting together a team and keeping them for long time is a challenge, due to 
+         confidence attached to private limited structure, it is easy to hire people as well as motivate them 
+         with corporate designations and stock options.
+          </p></h6>
+          </ion-item>
+
+          <ion-item>
+            <h6 (click)="toggleGroup5(i)" [ngClass]="{active: isGroupShown5(i)}" style="color: black;font-size: 13px;">
+              Easy to Sell
+            <ion-icon [name]="isGroupShown5(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+             style="margin-left: 150px;color: black;font-size: 15px;">
+            </ion-icon>
+            <p *ngIf="isGroupShown5(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+            margin-bottom: 10px;text-align: justify;color: gray;"> 
+        Private Ltd. is easy to sell, very less documentation and cost is involved in selling a Pvt. Ltd. company.
+            </p></h6>
+            </ion-item>
+    </ion-list>
+</div>
+
+<!-- -------pre-req---- -->
+<div *ngIf="segmentModel === 'Pre-requisites'">
+<h6>Minimum 2 shareholders</h6>
+<h6>Minimum 2 directors</h6>
+<h6>The directors and shareholders can be same person</h6>
+<h6> One of the Directors must be Indian Resident</h6>
+<h6>DIN (Director Identification Number) for all Directors</h6>
+<h6>DSC (Digital Signature Certificate) for 2 Promoters & 1 witness</h6>
+
+</div>
+<!--delvrbles-->
+
+<div *ngIf="segmentModel === 'Deliverables'">
+  <ion-icon name="checkmark-circle-outline"></ion-icon>
+  <ion-label>   DIN for 2 Directors</ion-label>
+  <br>
+ 
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>    Digital Signature Token for 2 Promoters & 1 witness</ion-label>
+<br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>    MOA + AOA</ion-label>  <br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>    Incorporation Certificate</ion-label>  <br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>    PF + ESIC + Professional Tax Registration</ion-label>  <br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>    Customized Incorporation Master File</ion-label>  <br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>   Company PAN Card</ion-label>  <br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>   Bank Account Opening Document Support</ion-label>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>   Domain Name + Web Hosting</ion-label>  <br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>   Company TAN/TDS Number</ion-label>  <br>
+<ion-icon name="checkmark-circle-outline"></ion-icon>
+<ion-label>  + 10 Email Ids for 1 year</ion-label>  <br>
+</div>
+
+
+<div *ngIf="segmentModel === 'FAQs'">
+  <ion-list>
+    <ion-item>
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      1. What documents required to set up Pvt. Ltd. Company in India?
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+     style="margin-left: 150px;color: black;font-size: 15px;">
+    </ion-icon>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+    margin-bottom: 10px;text-align: justify;color: gray;"> 
+    Pan card and one address proof. For more details, please fill the above details
+    </p></h6>
+    </ion-item>
+
+   
+      <ion-item>
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+        2. Do I have to have office (commercial) space to start a Company?
+      <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="margin-left: 150px;color: black;font-size: 15px;">
+      </ion-icon>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: justify;color: gray;"> 
+    No, commercial office space is not required. You can show your own residential
+    or rented home address as the registered office address of the Company. 
+    This office address can be changed at any time after incorporation of the company. 
+    Once your startup is set up, stable and ready to move on to a nice corporate space you can change the
+     registered office address by informing to the ROC office.
+      </p></h6>
+      </ion-item>
+      
+      </ion-list>
+
+  
+
+
+</div>
+
+
+</ion-content>
+
+
+

@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <div class="login-header">
+    <img class="logo-img extra " src="..//../assets/Artboard 1.png ">
+  </div>
+</ion-header>
+
+<ion-content class="background">
+  <form [formGroup]="formcontrol" (ngSubmit)="register()">
+
+    <!--------Heading and positioning----->
+    <div class="me">
+      <div heading-column-lr>
+        <h1 big-heading>Sign In</h1>
+      </div>
+
+      <!-------Register Fullname-------->
+      <ion-item transparent>
+        <ion-icon name="person" ></ion-icon>
+        <!-- <img icon-small src="..//../assets/2.png"> -->
+        <ion-input clearInput formControlName="fullname" type="text" placeholder="Fullname" ></ion-input>
+      </ion-item>
+
+      <!---------Validate Fullname----- -->
+      
+
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.required">
+        Name is required.
+      </span>
+     
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.minlength">
+        Name must be at least 5 characters long.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.pattern">
+        Name must contain only letters.
+      </span>
+     
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.maxlength">
+        Name cannot be more than 20 characters long.
+      </span>
+
+<!-- ---------------Email------------ -->
+
+      
+    <ion-item transparent>
+      <!-- <img icon-small src="../../assets/11.png"> -->
+      <ion-icon name="mail"></ion-icon>
+      <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
+       
+    </ion-item>
+    <!-- ----------validate---------------- -->
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      Email-ID required
+    </span>
+   
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      Please enter Valid Email-ID
+    </span>
+   
+        <div linespace></div>
+
+      <ion-button class="fix-bottom-button" color="primary" size="small" (click)="register()"
+      slot="fixed" expand="block" fill="solid">Sign Up</ion-button>
+      <ion-label class="ion-text-center ion-margin-top">Already have an account? &nbsp;
+        <a routerLink="/login">Login</a>
+      </ion-label>
+
+    </div>
+  </form>
+
+</ion-content>

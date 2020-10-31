@@ -1,0 +1,485 @@
+<ion-header>
+  <ion-toolbar style="--background: blue;--border-color:white;--border-width:1px;">
+    <ion-grid style="color: blue;">
+      <ion-row>
+      <ion-col size="1" [routerLink]="['/prtct-business']"> 
+      <div class="container" style="text-align: left;font-size: 35px;">
+      <ion-icon name="chevron-back-outline" style="font-size:initial;color: white;"></ion-icon>
+      </div> 
+       </ion-col>
+       <ion-col size="10">
+       <div class="container" style="font-size:18px;margin-left: 20px;color: white;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+       Reply to Trademark Objection 
+        </div>
+       </ion-col>              
+     </ion-row></ion-grid>
+     </ion-toolbar>
+   </ion-header>
+
+<ion-content>
+
+<ion-toolbar>
+
+  <ion-segment scrollable
+  value="all"
+
+  mode="Android"
+  [(ngModel)]="segmentModel" 
+  (ionChange)="segmentChanged($event)">
+
+    <ion-segment-button value="Overview">
+      <ion-label style="font-weight: bold; color: white;">Overview</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Benifits">
+      <ion-label style="font-weight: bold; color: white;">Benifits </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Pre-requisites">
+      <ion-label style="font-weight: bold; color: white;">Pre-requisites </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Deliverables">
+      <ion-label style="font-weight: bold; color: white;">Deliverables</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="FAQs">
+      <ion-label style="font-weight: bold; color: white;">FAQs</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+<div *ngIf="segmentModel === 'Overview'">
+  <h3 style="text-align: center;font-weight: bold;">File Legal reply for</h3>
+  <h4 style="text-align: center;font-weight: bold;">Trademark Objection in </h4>
+  <h4 style="text-align: center;font-weight: bold;">3 days</h4>
+  <br>
+
+  <p style="text-align: center;">Any time. Any where. At Single click</p><br>
+  <p style="text-align: center;">Call Now</p>
+
+  <ion-grid>
+    <ion-row>
+    <ion-col size="4">
+      <ion-chip style="height: 60px;width: 100px;--background: white;">
+        <ion-avatar style="width: 100px;height: 60px;">
+          <img src="https://www.startupwala.com/images/pan-tan-registration.svg">
+        </ion-avatar>
+        <ion-label></ion-label>
+      </ion-chip>
+    </ion-col>
+  
+    <ion-col size="4">
+      <ion-chip style="height: 60px;width: 100px;--background: white;margin-left: 30px;">
+        <ion-label style="font-size: 20px;">+</ion-label>
+        <ion-avatar style="width: 20px;height: 40px;">
+          
+        </ion-avatar>
+        
+      </ion-chip>
+    </ion-col>
+  
+    <ion-col size="3">
+      <ion-chip style="height: 60px;width: 100px;--background: white;">
+        <ion-avatar style="width: 120px;height: 80px;margin-right: 30px;">
+        <img src="https://www.startupwala.com/images/mobile_nav_10.png">
+        </ion-avatar>
+        </ion-chip>
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+  <br>
+  
+    <ion-grid>
+    <ion-row>
+    <ion-col size="6">
+      <div>
+      <p style="font-size: 12px;margin-left: 5px;">Trademark Search with</p>
+      <p style="font-size: 12px;margin-top: 0em;margin-left: 5px;">Legal Report</p>
+      </div>
+      </ion-col>
+      
+      <ion-col size="6">
+        <p style="font-size: 12px;margin-left: 40px;">Get 10% Discount for  </p>
+        <p style="font-size: 12px;margin-top: 0em;margin-left: 40px;">4 or more Application</p>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+
+    </div>
+
+  <!--Special Recharge-->
+
+<div *ngIf="segmentModel === 'Benifits'">
+
+  <ion-list>
+    <ion-item lines="none">
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div>
+      <img src="https://www.startupwala.com/images/limited-liability-protection-to-directors-personal-assets.svg" 
+      style="height: 50px;width: 60px;margin-bottom: 0em;">
+      </div>
+      </ion-col>
+      <ion-col>
+      <div>
+      <p>Limited Liability Protection to Directors</p>
+      </div>
+      </ion-col>
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+    style="margin-top: 25px;color: gray;">
+    </ion-icon>
+  </ion-row>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+    margin-bottom: 10px;text-align: justify;color: black;"> 
+    Many times startups need to borrow money and take things on credit. In case of normal Partnerships,
+     Partners personal savings and property would be at risk incase business is not able to repay its loans.
+      In a private limited company, only investment in business is lost, personal assets of the directors are
+       safe.
+    </p></h6>
+    </ion-item>
+
+    <ion-item lines="none">
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div>  
+      <img src="https://www.startupwala.com/images/better-image-and-credibility-in-market.svg" style="height: 50px;width: 60px;margin-bottom: 0em;">
+      </div>
+    </ion-col>
+    <ion-col>
+    <div>
+    <p>Better image and credibility in Market</p>
+      </div>
+     </ion-col>
+      <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+      style="margin-top: 25px;color: gray;">
+      </ion-icon>
+      </ion-row>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+      margin-bottom: 10px;text-align: justify;color: black;"> 
+      Private limited company is popular and well known business structure. Corporate Customers, 
+      Vendors and Govt. Agencies prefer to deal with Private Limited Company instead of proprietorship or 
+      normal partnerships.
+      </p></h6>
+      </ion-item>
+
+      
+
+       <ion-item lines="none">
+      <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div>  
+      <img src="https://www.startupwala.com/images/easy-to-raise-funds-and-loans.svg" style="height: 50px;width: 110px;margin-bottom: 0em;">
+      </div>
+      </ion-col>
+      <ion-col>
+      <div>
+      <p>Easy to raise funds and loans</p>
+      </div>
+      </ion-col>
+      <ion-icon [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+      style="margin-top: 25px;color: gray;">
+      </ion-icon>
+      </ion-row>
+      <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+      margin-bottom: 10px;text-align: justify;color: black;"> 
+     Pvt. Ltd. company enjoys wide options to raise funds through bank loans, Angel Investors, 
+     Venture Capitalists, in comparison to LLPs and OPCs.
+      </p></h6>
+      </ion-item>
+
+      <ion-item lines="none">
+      <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div> 
+       <img src="https://www.startupwala.com/images/favorite-business-structure-for-investors.svg">
+      </div>
+    </ion-col>
+    <ion-col>
+    <div>
+      <p>Favorite Business structure for Investors</p>
+      </div>
+      </ion-col>
+        <ion-icon [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'"
+        style="margin-top: 25px;color: gray;">
+        </ion-icon>
+        </ion-row>
+        <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+        margin-bottom: 10px;text-align: justify;color: black;"> 
+        Investors love to invest in Private Limited companies as it is well structured and less strings attached.
+         Most important it is very easy to exit from a private limited company.
+        </p></h6>
+        </ion-item>
+
+        <ion-item lines="none">
+          <h6 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;font-size: 13px;">
+          <ion-row>
+          <ion-col size="3" style="margin-bottom: 10px;">
+          <div>
+          <img src="https://www.startupwala.com/images/easy-to-attract-employees.svg">
+         </div>
+         </ion-col>
+         <ion-col>
+         <div>
+            <p>Easy to attract Employees</p>
+        </div>
+        </ion-col>
+          <ion-icon [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+          style="margin-top: 25px;color: gray;">
+          </ion-icon>
+          </ion-row>
+          <p *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+          margin-bottom: 10px;text-align: justify;color: black;"> 
+         For startups putting together a team and keeping them for long time is a challenge, due to 
+         confidence attached to private limited structure, it is easy to hire people as well as motivate them 
+         with corporate designations and stock options.
+          </p></h6>
+          </ion-item>
+
+          <ion-item lines="none">
+            <h6 (click)="toggleGroup5(i)" [ngClass]="{active: isGroupShown5(i)}" style="color: black;font-size: 13px;">
+            <ion-row>
+            <ion-col size="3" style="margin-bottom: 10px;">
+            <div>
+            <img src="https://www.startupwala.com/images/easy-to-sell.svg"
+            style="height: 70px;width: 250px;margin-bottom: 0em;">
+           </div>
+           </ion-col>
+           <ion-col>
+           <div style="margin-top: 25px;">
+            <p>Easy to Sell</p>
+          </div>
+          </ion-col>
+            <ion-icon [name]="isGroupShown5(i) ? 'chevron-up-outline' : 'chevron-down-outline'"
+            style="margin-top: 20px;color: gray;">
+            </ion-icon>
+            </ion-row>
+            <p *ngIf="isGroupShown5(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+            margin-bottom: 10px;text-align: justify;color: black;"> 
+           Private Ltd. is easy to sell, very less documentation and cost is involved in selling 
+           a Pvt. Ltd. company.
+            </p></h6>
+            </ion-item>
+
+    </ion-list>
+  </div>
+
+<!-- -------pre-req---- -->
+<div *ngIf="segmentModel === 'Pre-requisites'">
+  
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Minimum 2 shareholders</ion-label></div>
+
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Minimum 2 directors</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>The directors and shareholders can be
+<ion-text style="margin-left: 35px;">same person</ion-text></ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>One of the Directors must be Indian 
+  <ion-text style="margin-left: 35px;">Resident</ion-text></ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>DIN (Director Identification Number) <ion-text style="margin-left: 35px;">
+   for all Directors</ion-text></ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>DSC (Digital Signature Certificate) for 
+  <ion-text style="margin-left: 33px;">all Promoters</ion-text></ion-label></div>
+<br>
+</div>
+<!--delvrbles-->
+
+<div *ngIf="segmentModel === 'Deliverables'">
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>DIN for 2 Directors</ion-label></div>
+  <br>
+ 
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Digital Signature Token for all <ion-text style="margin-left: 30px;">Promoters</ion-text>
+  </ion-label></div>
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Company name approval</ion-label></div>
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>MOA + AOA</ion-label></div>  
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Incorporation Certificate</ion-label></div>
+  <br>
+
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>New Incorporation Kit</ion-label></div>
+<br>
+
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Customized Incorporation Master File</ion-label></div>
+   <br>
+   <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Company PAN Card</ion-label></div>
+      <br>
+
+      <div class="container" style="text-align: start;">
+        <ion-icon name="checkmark-circle-outline" 
+        style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+      <ion-label>Company TAN/TDS Number</ion-label></div>
+    <br>
+
+    <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Bank Account Opening Document 
+    <ion-text style="margin-left: 30px;">Support</ion-text></ion-label></div>
+    <br>
+    <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Domain Name for 1 year + Web
+      <ion-text style="margin-left: 30px;">Hosting + 0 Email Ids for 1 year OR</ion-text></ion-label></div>
+      <br>
+    
+    <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Online Accounting Software for 1 year</ion-label></div>
+     <br>
+     <br>
+</div>
+
+<div *ngIf="segmentModel === 'FAQs'" >
+
+  <ion-list>
+    <ion-card>
+    <ion-item >
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      1. What is Trademark Objection?
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+     style="color: gray;;font-size: 15px;">
+    </ion-icon>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+    margin-bottom: 10px;text-align: justify;color: black;"> 
+    Trademark Objection means, the trademark registry has examined or checked your trademark application 
+    and while checking,they have reasons to object the application and ask for clarification on certain points.
+     The registry uploads a copy of Examination Report on their official website (trademark application status) 
+     and sends a letter to the applicant asking for reply.
+    Here the Objection is raised by the Trademark department on its own and there is no third party, 
+    company or competitor brand which has raised its objection. Such third party raising objection is called
+     Trademark Opposition.
+    </p></h6>
+    </ion-item>
+    </ion-card>
+
+      <ion-card>
+      <ion-item>
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+        2. What is difference between Trademark <ion-text style="margin-left:15px;">
+          Examination and Trademark Objection?</ion-text>  
+        <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="color: gray;font-size: 15px;">
+      </ion-icon>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: justify;color: black;"> 
+      There is no difference; they are one and the same.
+      </p></h6>
+      </ion-item>
+      </ion-card>
+
+      <ion-card>
+      <ion-item>
+        <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+          3. Why to File Reply to Trademark Objection<ion-text style="margin-left:15px;"> - Advantages & Benefits</ion-text>
+          <ion-icon [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+         style="color: gray;font-size: 15px;">
+        </ion-icon>
+        <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+        margin-bottom: 10px;text-align: justify;color: black;"> 
+        It is important to submit a proper reply to TM objection report within 30 days of issue of the report.
+        If a legal reply is not filed, the trademark registry may cancel the trademark application and update 
+        the status of the application as Abandoned
+        </p></h6>
+        </ion-item>
+        </ion-card>
+
+        <ion-card>
+        <ion-item>
+          <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+            4. How to Respond to Trademark Objection
+            <ion-icon [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+           style="color: gray;font-size: 15px;">
+          </ion-icon>
+          <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+          margin-bottom: 10px;text-align: justify;color: black;"> 
+          Procedure to submit objection response requires legal knowledge and drafting skills. Please
+           fill in above details and Startupwala Trademark Experts will do the rest. There is no fixed
+            format for trademark objection reply and it depends upon case to case.
+          </p></h6>
+          </ion-item>
+          </ion-card>
+         
+          <ion-card>
+          <ion-item>
+            <h6 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;font-size: 13px;">
+              5. What happens after filing of Reply to <ion-text style="margin-left:15px;">Examination Report</ion-text>
+              <ion-icon [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+             style="color: gray;font-size: 15px;">
+            </ion-icon>
+            <p *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+            margin-bottom: 10px;text-align: justify;color: black;"> 
+          The objection reply is submitted online and you receive an acknowledgment of the reply.
+           The PDF copy of Reply is uploaded on Trademark Registry website under your application.
+          The Status will still be shown as Objected until the Registry reviews the reply and accepts the 
+          trademark or rejects it. Normally this process takes around six months to an year.
+            </p></h6>
+            </ion-item>
+            </ion-card>
+          
+          </ion-list>
+          </div>
+
+</ion-content>
+
+
+

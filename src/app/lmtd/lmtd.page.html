@@ -1,0 +1,458 @@
+<ion-header>
+  <ion-toolbar style="--background: blue;--border-color:white;--border-width:1px;">
+    <ion-grid style="color: blue;">
+      <ion-row>
+      <ion-col size="1" [routerLink]="['/business']"> 
+      <div class="container" style="text-align: left;font-size: 35px;">
+      <ion-icon name="chevron-back-outline" style="font-size:initial;color: white;" ></ion-icon>
+      </div> 
+       </ion-col>
+       <ion-col size="10">
+       <div class="container" style="font-size:18px;margin-left: 30px;color: white;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Limited Liability Partnership
+      </div>
+    </ion-col>              
+  </ion-row></ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-searchbar class="ion-margin-top"  showCancelButton="never"></ion-searchbar> -->
+
+<ion-toolbar>
+
+  <ion-segment scrollable
+  value="all"
+
+  mode="Android"
+  [(ngModel)]="segmentModel" 
+  (ionChange)="segmentChanged($event)">
+
+    <ion-segment-button value="Overview">
+      <ion-label style="font-weight: bold; color: white;">Overview</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Benifits">
+      <ion-label style="font-weight: bold;color: white;">Benifits </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Pre-requisites">
+      <ion-label style="font-weight: bold;color: white;">Pre-requisites </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Deliverables">
+      <ion-label style="font-weight: bold;color: white;">Deliverables</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="FAQs">
+      <ion-label style="font-weight: bold;color: white;">FAQs</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+<div *ngIf="segmentModel === 'Overview'">
+    <h3 style="text-align: center;font-weight: bold;">Kickstart Your Pvt.Ltd.!</h3>
+    <h4 style="text-align: center;font-weight: bold;" >company within 10 days </h4>
+    <h4 style="text-align: center;font-weight: bold;">at ₹ 3,999*</h4>
+  
+    <br>
+  
+    <p style="text-align: center;">Any time. Any where. At Single click</p><br>
+    <p style="text-align: center;">Also Get Absolutely Free</p>
+  
+    <ion-grid>
+      <ion-row>
+      <ion-col size="4">
+        <ion-chip style="height: 60px;width: 100px;--background: white;">
+          <ion-avatar style="width: 100px;height: 60px;">
+            <img src="https://www.startupwala.com/images/pan-tan-registration.svg">
+          </ion-avatar>
+          <ion-label>+</ion-label>
+        </ion-chip>
+      </ion-col>
+    
+      <ion-col size="4">
+        <ion-chip style="height: 60px;width: 100px;--background: white;">
+          <ion-avatar style="width: 100px;height: 60px;">
+            <img src="https://www.startupwala.com/images/mobile_nav_10.png">
+          </ion-avatar>
+          <ion-label>OR</ion-label>
+        </ion-chip>
+      </ion-col>
+    
+      <ion-col size="3">
+        <ion-chip style="height: 60px;width: 100px;--background: white;">
+          <ion-avatar style="width: 60px;height: 30px;">
+          <img src="https://www.startupwala.com/images/GST-Registration.svg">
+          </ion-avatar>
+          </ion-chip>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+    <br>
+    
+      <ion-grid>
+      <ion-row>
+      <ion-col size="4">
+        <div>
+        <p style="font-size: 12px;margin-left: 10px;">PAN + TAN</p>
+        <p style="font-size: 12px;margin-top: 0em;margin-left: 10px;">Registration</p>
+        </div>
+        </ion-col>
+        <ion-col size="4">
+          <p style="font-size: 12px;">Domain Name + 1 yr hosting + 10 emails</p>
+          <p style="font-size: 12px;margin-top: 0em;"></p>
+        </ion-col>
+        <ion-col size="4">
+          <p style="font-size: 12px;margin-left: 30px;">Online Accounting</p>
+          <p style="font-size: 12px;margin-top: 0em;margin-left: 30px;">Software</p>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+
+  </div>
+  
+  <!--Special Recharge-->
+
+<div *ngIf="segmentModel === 'Benifits'">
+
+  <ion-list>
+
+    <ion-item lines="none">
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+        <ion-col size="3" style="margin-bottom: 10px;">
+        <div>
+        <img src="https://www.startupwala.com/images/limited-liability-protection-to-directors-personal-assets.svg" style="height: 50px;width: 60px;margin-bottom: 0em;">
+        </div>
+        </ion-col>
+        <ion-col>
+        <div>
+    <p>Limited Liability Protection to Directors personal assets</p>
+    </div>
+    </ion-col>
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+    style="color: gray;font-size: 15px;margin-top: 20px;">
+    </ion-icon>
+    </ion-row>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+    margin-bottom: 10px;text-align: justify;color: black;"> 
+    Many times startups need to borrow money and take things on credit. In case of normal Partnerships,
+     Partners personal savings and property would be at risk incase business is not able to repay its loans.
+      In a private limited company, only investment in business is lost, personal assets of the directors are
+       safe.
+    </p></h6>
+    </ion-item>
+
+   
+    <ion-item lines="none">
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div>  
+      <img src="https://www.startupwala.com/images/better-image-and-credibility-in-market.svg" style="height: 50px;width: 60px;margin-bottom: 0em;">
+      </div>
+    </ion-col>
+    <ion-col>
+    <div>
+    <p>Better image and credibility in Market</p>
+      </div>
+     </ion-col>
+      <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+      style="margin-top: 25px;color: gray;">
+      </ion-icon>
+      </ion-row>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+      margin-bottom: 10px;text-align: justify;color: black;"> 
+      Private limited company is popular and well known business structure. Corporate Customers, 
+      Vendors and Govt. Agencies prefer to deal with Private Limited Company instead of proprietorship or 
+      normal partnerships.
+      </p></h6>
+      </ion-item>
+
+       <ion-item lines="none">
+      <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+        <ion-row>
+          <ion-col size="3" style="margin-bottom: 10px;">
+          <div>  
+          <img src="https://www.startupwala.com/images/easy-to-raise-funds-and-loans.svg">
+          </div>
+          </ion-col>
+          <ion-col>
+          <div>
+          <p>No Audit Requirement & Minimal Compliances</p>
+          </div>
+          </ion-col>
+      <ion-icon [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+       style="color: gray;font-size: 15px;margin-top: 20px;">
+      </ion-icon>
+      </ion-row>
+      <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+      margin-bottom: 10px;text-align: justify;color: black;"> 
+     LLP is easy to manage and statutory audit is not required for Limited Liability Partnership. LLP is most ideal for small enterprises. T
+     Audit is also not required for LLPs with capital less than Rs. 25 lac and turnover not
+      exceeding Rs. 40 lac.
+      </p></h6>
+      </ion-item>
+
+      <ion-item lines="none">
+        <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+        <ion-row>
+        <ion-col size="3" style="margin-bottom: 10px;">
+        <div> 
+         <img src="https://www.startupwala.com/images/favorite-business-structure-for-investors.svg" 
+         style="height: 55px;width: 150px;margin-bottom: 0em;">
+        </div>
+      </ion-col>
+      <ion-col>
+      <div>
+        <p>Continuity of Business</p>
+        </div>
+        </ion-col>
+          <ion-icon [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'"
+          style="margin-top: 25px;color: gray;">
+          </ion-icon>
+          </ion-row>
+          <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+          margin-bottom: 10px;text-align: justify;color: black;"> 
+          LLP continues to exist beyond the existence of its Partners.
+          This is not possible in traditional partnership firms.
+          </p></h6>
+          </ion-item>
+          <br>
+
+    </ion-list>
+
+</div>
+
+<!-- -------pre-req---- -->
+<div *ngIf="segmentModel === 'Pre-requisites'">
+
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Minimum 2 Partners</ion-label></div>
+  <br>
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>If a body corporate is a Partner, it has  
+  <ion-text style="margin-left: 30px;"> to nominate a natural person as its</ion-text>
+  <ion-text style="margin-left: 30px;"> Nominee</ion-text></ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>There is no concept of share 
+  <ion-text style="margin-left: 30px;"> capital,but each Partner has to</ion-text>
+  <ion-text style="margin-left: 30px;">  contribute towards capital of LLP</ion-text>
+</ion-label></div>
+  <br>
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>DIN (Director Identification Number) 
+  <ion-text style="margin-left: 30px;">for all the Designated Partners</ion-text></ion-label></div>
+    <br>
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>DSC (Digital Signature Certificate) for <ion-text style="margin-left: 30px;">
+    all the Designated Partners</ion-text></ion-label></div>
+  <br>
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Address proof for office of LLP</ion-label></div>
+    <br>
+
+</div>
+<!--delvrbles-->
+
+<div *ngIf="segmentModel === 'Deliverables'">
+
+ <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   DIN for 2 Partners</ion-label></div>
+  <br>
+ 
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>    Digital Signature  2 Partners</ion-label></div>
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>    Incorporation Certificate</ion-label> </div>
+ <br>
+ <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>    LLP Agreement</ion-label></div>
+  <br>
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>    LLP PAN Card</ion-label></div>
+  <br>
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>   LLP TAN/TDS Number</ion-label></div>
+     <br>
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Bank A/C Opening Document Support</ion-label></div>
+<br>
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Domain Name + Web Hosting</ion-label></div>
+    <br>
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Master File of all docs filed for
+    <ion-text style="margin-left: 35px;"> Incorporation</ion-text></ion-label></div>
+    <br>
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>  + 10 Email Ids for 1 year</ion-label></div>
+      <br>
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>  Award Winning - ISO certified Team</ion-label></div>
+    <br>
+</div>
+
+
+<div *ngIf="segmentModel === 'FAQs'">
+
+  <ion-list>
+    <ion-card>
+    <ion-item>
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      1. What documents required to set up Pvt. Ltd. Company in India?
+    <ion-icon class="ic" [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+    style="color: gray;">
+    </ion-icon>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+    margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+    Pan card and one address proof. For more details, please fill the above details
+    </p></h6>
+    </ion-item>
+    </ion-card>
+
+      <ion-card>
+      <ion-item>
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+        2. Do I have to have office (commercial) space to start a Company?
+      <ion-icon class="ic" [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="color: gray;">
+      </ion-icon>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+    No, commercial office space is not required. You can show your own residential
+    or rented home address as the registered office address of the Company. 
+    This office address can be changed at any time after incorporation of the company. 
+    Once your startup is set up, stable and ready to move on to a nice corporate space you can change the
+     registered office address by informing to the ROC office.
+      </p></h6>
+      </ion-item>
+      </ion-card>
+
+      <ion-card>
+      <ion-item>
+        <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+          3. Who is Registrar of Companies (ROC)?
+        <ion-icon class="ic" [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+         style="color: gray;">
+        </ion-icon>
+        <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+        margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+      ROC is a Government office with whom companies get registered. Every State has one ROC office 
+      except Maharashtra and Tamilnadu where there are two ROC offices. In Maharashtra companies are registered
+       with Mumbai & Pune ROC. In Tamilnadu companies are incorporated at Chennai and Coimbatore ROCs. In all 
+       other States like Delhi there is only one ROC office, like at Bangalore, Hyderabad and so on.
+        </p></h6>
+        </ion-item></ion-card>
+
+        <ion-card>
+        <ion-item>
+          <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+            4. Do I have to physically visit ROC Office while Setting up company?
+          <ion-icon class="ic" [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+           style="color: gray;">
+          </ion-icon>
+          <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+          margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+        No. Startupwala provides complete online Company Incorporation process. 
+        All legal documentation with ROC and visits are done by Startupwala.
+          </p></h6>
+          </ion-item>
+          </ion-card>
+
+          <ion-card>
+          <ion-item>
+            <h6 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;font-size: 13px;">
+              5. Is LLP Registration to be renewed every year?
+            <ion-icon class="ic" [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+             style="color: gray;">
+            </ion-icon>
+            <p *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+            margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+          No. Once the LLP is formed, it will be valid till it is officially closed down by the owners. No renewal or fees is required. However, every year LLPs have to file very 
+          basic returns with ROC office.
+            </p></h6>
+            </ion-item>
+            </ion-card>
+
+            <ion-card>
+            <ion-item>
+              <h6 (click)="toggleGroup5(i)" [ngClass]="{active: isGroupShown5(i)}" style="color: black;font-size: 13px;">
+                6. What is a DIN?
+              <ion-icon class="ic" [name]="isGroupShown5(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+               style="color: gray;">
+              </ion-icon>
+              <p *ngIf="isGroupShown5(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+              margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+            Director Identification Number (DIN) is a unique identification number required for a person 
+            to become a director of a company. DIN is issued by ROC office (Ministry of Corporate Affairs)
+            It is similar to a PAN Card number.DIN is to be mentioned in documents while appointing a person
+             as a director of a company.
+              </p></h6>
+              </ion-item></ion-card>
+              
+              <ion-card>
+              <ion-item>
+                <h6 (click)="toggleGroup6(i)" [ngClass]="{active: isGroupShown6(i)}" style="color: black;font-size: 13px;">
+                  7.What is a DSC?
+                <ion-icon class="ic" [name]="isGroupShown6(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                 style="color: gray;">
+                </ion-icon>
+                <p *ngIf="isGroupShown6(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+             A digital signature is electronic signature, which is in the form of codes. It is used for signing the electronic forms, 
+             filed with ROC for incorporation of Company. Digital Signature cannot be used in physical documents.
+                </p></h6>
+                </ion-item>
+                </ion-card>
+      </ion-list>
+
+   </div>
+</ion-content>
+
+
+
+
+

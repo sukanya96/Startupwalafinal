@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>GST-Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+
+
+   <ion-item>
+    <ion-label>Private Limited</ion-label>
+   </ion-item>
+   
+   <ion-item>
+    <ion-label>Limited Liability Partnership</ion-label>
+   </ion-item>
+
+   <ion-item>
+    <ion-label>Partnership</ion-label>
+   </ion-item>
+
+   <ion-item>
+    <ion-label> Proprietorship</ion-label>
+   </ion-item>
+
+   <ion-item>
+    <ion-label>One Person Company</ion-label>
+   </ion-item>
+
+   <ion-item>
+    <ion-label>Other</ion-label>
+   </ion-item>
+
+  </ion-list>
+</ion-content>
+
+
+<!-- ---------------------Footer-------------------------------------- -->
+<ion-footer style="text-align: center;">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+
+          <ion-icon id="brief" name="settings"></ion-icon>
+
+        </ion-col>
+
+        <ion-col size="4">
+
+          <ion-icon id="brief" name="notifications"></ion-icon>
+
+        </ion-col>
+
+        <ion-col size="4">
+
+          <ion-icon id="brief"  name="person" [routerLink]="['/userprofile']" ></ion-icon>
+
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

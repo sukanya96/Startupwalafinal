@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <ion-menu contentId="main-content" type="overlay" class="custom-menu" menuId="custom" id="custom">
+
+      <ion-header>
+        <ion-toolbar style="--background:blue;">
+          <br>
+          <div style="text-align: center;">
+            <ion-avatar>
+              <ion-img src="https://vignette.wikia.nocookie.net/caramella-girls/images/9/99/Blankpfp.png/revision/latest?cb=20190122015011"></ion-img>
+            </ion-avatar>
+            
+          </div>
+          <div>
+            <p style="color: white;margin-bottom: 10px;text-align: center;">Sukanya</p>
+          </div>
+
+
+      </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <div class="container">
+
+        <ion-list class="ion-no-padding">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="ion-no-padding">
+              <img src="../assets/sb.jpg" style="width: 70px;height: 70px;">
+
+              <ion-label [routerLink]="['/business']">Start Business</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+
+        
+        
+        <ion-list class="ion-no-padding">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="ion-no-padding">
+            <img src="../assets/pb.jpg" style="width: 70px;height: 70px;">
+              <ion-label [routerLink]="['/prtct-business']">Protect Business</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+
+        <ion-list class="ion-no-padding">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="ion-no-padding">
+              <img src="../assets/mg.jpg" style="width: 70px;height: 70px;">
+              <ion-label [routerLink]="['/manage-business']"> Manage Business</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list class="ion-no-padding">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="ion-no-padding">
+              <img src="../assets/gb.jpg" style="width: 70px;height: 70px;">
+              <ion-label [routerLink]="['/grow-business']">Grow Business</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list class="ion-no-padding">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="ion-no-padding">
+              <img src="../assets/p.jpg" style="width: 70px;height: 70px;">
+              <ion-label [routerLink]="['/free-agree']">Get 21 Free Agreements</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+
+        <ion-list class="ion-no-padding">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="ion-no-padding">
+              <img src="../assets/pay.png" style="width: 70px;height: 70px;">
+              <ion-label [routerLink]="['/payment']">Payment</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        </div>
+      
+      </ion-content>
+      <ion-footer style="text-align: center;">
+      <ion-toolbar style="--background:blue;">
+        <p routerLink="/login" style="color: white;text-align: center;">Log out</p>
+      </ion-toolbar>
+      </ion-footer>
+    </ion-menu>
+    </ion-split-pane>
+
+
+    </ion-app>

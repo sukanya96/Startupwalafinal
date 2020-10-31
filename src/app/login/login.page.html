@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+
+<ion-header>
+ 
+  <div class="login-header" ion-padding>
+
+    <img class="logo-img extra" src="..//../assets/Artboard 1.png" style="margin-top: 20px;">
+    </div>
+</ion-header>
+
+
+<ion-content>
+
+  <form [formGroup]="formcontrol" (ngSubmit)="login()">
+  <div class="center">
+ <div heading-column-lr >
+  <h1 big-heading style="color: blue;margin-top: 60px;">Login</h1>  
+    </div> 
+    
+<!-- ------------------Email------------- -->
+    <ion-item transparent style="margin-top: 30px;">
+      
+      <ion-icon name="mail"></ion-icon>
+      
+      <ion-input placeholder="Email" type="text" inputmode="text" formControlName="email"></ion-input>
+       
+    </ion-item>
+
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      Email is required.
+    </span>
+   
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      Please enter valid email
+    </span>
+
+    <ion-item transparent>
+      
+      <ion-icon name="person-circle"></ion-icon>
+
+      <ion-input [type]="password_type" placeholder="password" type="text" required formControlName="password"></ion-input>
+      <ion-icon name="eye" item-right (click)="togglePasswordMode()"></ion-icon>       
+    </ion-item>
+
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+      password is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+      password must be at least 6 characters long.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.maxlength">
+      password cannot be more than 10 characters long.
+    </span>
+   
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.maxLength">
+      password should be greater than 6
+    </span>
+
+    
+   <ion-button class="ion-button-class" expand="block" side="bottom"
+   (click)="login()" style="margin-top: 120px;--background:blue;">Get OTP</ion-button> 
+
+  <ion-label class="ion-text-center" style="font-size: 12px;color: blue;">Don't have Account ?
+    <span class="link-button" (click)="Register()" [routerLink]="['/register']" style="color: red;font-size: 12px;">SIGN UP
+  </span></ion-label>
+  </div>
+</form>
+</ion-content>
+

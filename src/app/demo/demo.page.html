@@ -1,0 +1,314 @@
+
+<ion-header class="ion-no-border">
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+  <ion-searchbar  [(ngModel)]="searchTerm"
+  (ionChange)="setFilteredItems()"  placeholder="Search Category...." >
+</ion-searchbar>
+  
+
+  <ion-list>
+    <!-- <div *ngIf="items.length > 0; else noItems">
+       <ion-item  *ngFor="let item of items" >
+        <ion-label (click)="fg()" >{{item.category}}</ion-label>
+        <ion-icon  name="chevron-forward-outline" slot="end"></ion-icon>
+      </ion-item> 
+    </div> -->
+
+    <ng-template #noItems>
+      <ion-item>
+        No items found.
+      </ion-item>
+    </ng-template>
+  
+
+  </ion-list>
+
+<!--   
+  <ion-item>
+    <ion-label >Start Business
+  
+    </ion-label>
+    
+      <option>PAN Number</option>
+      <option>Form-16</option>
+      <option>Adhaar Card</option>
+      <option>Company</option>
+      <option>Private Limited</option>
+      <option>Limited Liability Partnership</option>
+      <option>Proprietorship</option>
+      <option>One Person Company</option>
+      <option>Other</option>
+
+  </ion-item> -->
+  <ion-list>
+  
+  
+    <ion-item>
+    <h2 (click)="toggleGroup(i)" (click)="bus()" [ngClass]="{active: isGroupShown(i)}" style="color: black;">
+    Start Business
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+	style="margin-left:16em;color: black;">
+    </ion-icon>
+	
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>Private Limited</ion-item>
+    </ion-list>
+
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item text-center>
+    
+
+      Limited Liability Partnership</ion-item>
+  </ion-list>
+  
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>Partnership</ion-item>
+  </ion-list>
+
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>Proprietorship</ion-item>
+  </ion-list>
+
+  
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>One Person Company	</ion-item>
+  </ion-list>
+
+  
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>PF Registration</ion-item>
+  </ion-list>
+
+  
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>Shops & Establishment</ion-item>
+  </ion-list>
+
+  
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>Professional Tax</ion-item>
+  </ion-list>
+
+  
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>Startup Registration</ion-item>
+  </ion-list>
+   
+  <ion-list lines="none" *ngIf="isGroupShown(i)">
+    <ion-item>Startup India Registration</ion-item>
+  </ion-list>
+  
+</h2>
+    </ion-item>
+
+</ion-list>
+
+
+<ion-list>
+  
+  <ion-item >
+  <h2 (click)="fg()" style="color: black;">
+  IT Fillings
+  <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+style="margin-left:18em;color: black;">
+  </ion-icon>
+
+<ion-list lines="none" *ngIf="isGroupShown1(i)">
+  <ion-item>Private Limited</ion-item>
+  </ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown1(i)">
+  <ion-item text-center>
+  
+
+    Limited Liability Partnership</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown1(i)">
+  <ion-item>Partnership</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown1(i)">
+  <ion-item>Proprietorship</ion-item>
+</ion-list>
+
+
+<ion-list lines="none" *ngIf="isGroupShown1(i)">
+  <ion-item>One Person Company	</ion-item>
+</ion-list>
+
+
+<ion-list lines="none" *ngIf="isGroupShown1(i)">
+  <ion-item>Other</ion-item>
+</ion-list>
+
+</h2>
+  </ion-item>
+
+</ion-list>
+
+<ion-list>
+  
+  <ion-item>
+  <h2 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;">
+  GST Registration
+  <ion-icon [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+  style="margin-left:204px">
+  </ion-icon>
+
+<ion-list lines="none" *ngIf="isGroupShown2(i)">
+  <ion-item>Private Limited</ion-item>
+  </ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown2(i)">
+  <ion-item text-center>
+    Limited Liability Partnership</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown2(i)">
+  <ion-item>Partnership</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown2(i)">
+  <ion-item>Proprietorship</ion-item>
+</ion-list>
+
+
+<ion-list lines="none" *ngIf="isGroupShown2(i)">
+  <ion-item>One Person Company	</ion-item>
+</ion-list>
+
+
+<ion-list lines="none" *ngIf="isGroupShown2(i)">
+  <ion-item>Other</ion-item>
+</ion-list>
+
+</h2>
+  </ion-item>
+
+</ion-list>
+
+
+<ion-list>
+  
+  <ion-item>
+  <h2 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;">
+  GST Fillings
+  <ion-icon [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+   style="margin-left:235px">
+  </ion-icon>
+
+<ion-list lines="none" *ngIf="isGroupShown3(i)">
+  <ion-item>Private Limited</ion-item>
+  </ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown3(i)">
+  <ion-item text-center>
+  
+
+    Limited Liability Partnership</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown3(i)">
+  <ion-item>Partnership</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown3(i)">
+  <ion-item>Proprietorship</ion-item>
+</ion-list>
+
+
+<ion-list lines="none" *ngIf="isGroupShown3(i)">
+  <ion-item>One Person Company	</ion-item>
+</ion-list>
+
+
+<ion-list lines="none" *ngIf="isGroupShown3(i)">
+  <ion-item>Other</ion-item>
+</ion-list>
+
+</h2>
+  </ion-item>
+
+</ion-list>
+
+
+<ion-list>
+  
+  <ion-item>
+  <h2 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;">
+  Compliance
+  <ion-icon [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end" 
+   style="margin-left:17em">
+  </ion-icon>
+
+
+
+<ion-list lines="none" *ngIf="isGroupShown4(i)">
+  <ion-item text-center>
+  PF and ESI Fillings</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown4(i)">
+  <ion-item>TDS Refund</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown4(i)">
+  <ion-item>Other</ion-item>
+</ion-list>
+
+</h2>
+  </ion-item>
+
+</ion-list>
+
+
+<ion-list>
+  
+  <ion-item>
+  <h2 (click)="toggleGroup5(i)" [ngClass]="{active: isGroupShown5(i)}" style="color: black;">
+  Manage Business
+  <ion-icon [name]="isGroupShown5(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end" 
+  style="margin-left:200px">
+  </ion-icon>
+
+<ion-list lines="none" *ngIf="isGroupShown5(i)">
+  <ion-item>Limited Limited ROC Compliance</ion-item>
+  </ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown5(i)">
+  <ion-item text-center>
+    LLP ROC Compliance
+  </ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown5(i)">
+  <ion-item>DIR3 DIN KYC Filing</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown5(i)">
+  <ion-item>One Person Company</ion-item>
+</ion-list>
+
+<ion-list lines="none" *ngIf="isGroupShown5(i)">
+  <ion-item>Appointment of Director</ion-item>
+</ion-list>
+
+
+</h2>
+  </ion-item>
+
+</ion-list>
+
+
+
+
+</ion-content>
+

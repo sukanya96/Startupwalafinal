@@ -1,0 +1,46 @@
+<ion-header no-border>
+  <ion-toolbar style="--background:blue;">
+  
+      <ion-row>
+      <ion-col size="4">
+      <ion-icon name="arrow-back-outline" style="color: white;font-size:20px;" [routerLink]="['/dashboard']">
+      </ion-icon></ion-col>
+      <ion-col size="5">
+      <h5 style="color: white;margin-left: 15px;">My Profile</h5></ion-col>
+      <ion-col>
+      <ion-icon name="log-in-outline" style="color: white;font-size: 25px;margin-left: 50px;" [routerLink]="['/login']"></ion-icon>
+      </ion-col>
+      </ion-row>
+        <div>
+          <ion-avatar>
+            <img src="https://vignette.wikia.nocookie.net/caramella-girls/images/9/99/Blankpfp.png/revision/latest?cb=20190122015011">
+          </ion-avatar>
+          </div>
+        <p style="color: white;text-align: center;">Sukanya</p>
+  
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+  <ion-item>
+  <h5 style="font-weight: 500;">Personal</h5>
+  </ion-item>
+
+<ion-card>
+
+<ion-item lines="none">
+  <h5 style="margin-left: 10px;"></h5>Full Name :<ion-input>Sukanya</ion-input>
+  <i class='fas fa-pen' slot="end" style='font-size:20px'></i>
+</ion-item>
+
+<ion-item lines="none">
+  <h5 style="margin-left: 10px;">Email:</h5>
+  <ion-input><h5></h5></ion-input>
+  <i class='fas fa-pen' slot="end" style='font-size:20px'></i>
+  </ion-item>
+ 
+</ion-card>
+
+
+</ion-content>

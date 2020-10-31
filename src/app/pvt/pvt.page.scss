@@ -1,0 +1,75 @@
+ion-label{
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
+    margin-bottom: 0em;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.warning{
+    background-color: skyblue;
+    padding: 10px 30px;
+}
+
+ion-segment-button{
+    text-transform: initial;
+    background-color: blue;
+    
+}
+//ion-toolbar {
+//    --background: blue;
+//   --border-color:white;
+ //   --border-width:1px ;
+//}
+ 
+h5{
+    color: black;
+}
+.btn {
+    border: 2px solid ;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .primary {
+    border-color: blue;
+    color: blue;
+    font-size: 14px;
+  }
+  .warning{
+      font-size: 15px;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 25px;
+  }
+ 
+ion-icon{
+    color: black;
+    font-size: 16px!important;
+    position: absolute;
+    left: 89%;
+    
+}
+ion-item{
+    margin-bottom: 0em;
+}
+ion-col{
+    height: 35px;
+}
+img{
+    margin-bottom: 0em;
+}
+.ion-4x {
+    
+    font-size: 25px;
+  }
+    

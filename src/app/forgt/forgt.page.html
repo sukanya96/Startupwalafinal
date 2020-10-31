@@ -1,0 +1,46 @@
+<ion-header >
+ 
+  <div class="login-header" ion-padding>
+   
+   
+    </div>
+</ion-header>
+
+
+<ion-content >
+  <form [formGroup]="formcontrol" >
+  <div class="center">
+ <div heading-column-lr >
+       <h1 big-heading>Forgot Password</h1>  
+    
+       
+    </div> 
+
+    <!-- ------------Email--------------- -->
+    <ion-item transparent>
+      <img icon-small src="../../assets/11.png">
+      <ion-input placeholder="Email" type="text"></ion-input>
+       
+    </ion-item>
+
+    <p class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">
+     Email required
+    </p>
+    <p class="error" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      Please enter Valid Email
+    </p>
+
+    <!-- <div *ngIf="valid" class="alert alert-danger" role="alert">
+      <p class="ion-margin-start" *ngIf="formcontrol.get('text').hasError('required')">Email required * </p>
+    </div>  -->
+    <!-- <p no-margin *ngIf="formcontrol.get('email').hasError('required')">Email required </p> -->
+
+    <!-- <ion-label class="ion-float-right forgot_pass"[routerLink]="['/forgt']">Forgot Password..?</ion-label> -->
+
+    <ion-button color="primary" class="ion-button-class" slot="fixed" shape="round" fill="solid" size="small" 
+    expand="block" style="margin-top: 25px;">SEND</ion-button> 
+     
+
+  </div>
+</form>
+</ion-content>

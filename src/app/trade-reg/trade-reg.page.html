@@ -1,0 +1,586 @@
+<ion-header>
+  <ion-toolbar style="--background: blue;--border-color:white;--border-width:1px;">
+    <ion-grid style="color: blue;">
+      <ion-row>
+      <ion-col size="1" [routerLink]="['/prtct-business']"> 
+      <div class="container" style="text-align: left;font-size: 35px;">
+      <ion-icon name="chevron-back-outline" style="font-size:initial;color: white;"></ion-icon>
+      </div> 
+       </ion-col>
+       <ion-col size="10">
+       <div class="container" style="font-size:18px;margin-left: 50px;color: white;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Trademark Registration
+       </div>
+       </ion-col>              
+     </ion-row></ion-grid>
+     </ion-toolbar>
+   </ion-header>
+
+<ion-content>
+
+<ion-toolbar>
+
+  <ion-segment scrollable
+  value="all"
+
+  mode="Android"
+  [(ngModel)]="segmentModel" 
+  (ionChange)="segmentChanged($event)">
+
+    <ion-segment-button value="Overview">
+      <ion-label style="font-weight: bold; color: white;">Overview</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Benifits">
+      <ion-label style="font-weight: bold; color: white;">Benifits </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Pre-requisites">
+      <ion-label style="font-weight: bold; color: white;">Pre-requisites </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Deliverables">
+      <ion-label style="font-weight: bold; color: white;">Deliverables</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="FAQs">
+      <ion-label style="font-weight: bold; color: white;">FAQs</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+<div *ngIf="segmentModel === 'Overview'">
+  <h3 style="text-align: center;font-weight: bold;">Get TM for your brand </h3>
+  <h4 style="text-align: center;font-weight: bold;"> in 1 hour</h4>
+  <h4 style="text-align: center;font-weight: bold;">at ₹ 1,499*</h4>
+  <br>
+
+  <p style="text-align: center;">Any time. Any where. At Single click</p><br>
+  <p style="text-align: center;">Also Get Absolutely Free</p>
+
+  <ion-grid>
+  <ion-row>
+  <ion-col size="4">
+    <ion-chip style="height: 60px;width: 100px;--background: white;">
+      <ion-avatar style="width: 100px;height: 60px;">
+        <img src="https://www.startupwala.com/images/pan-tan-registration.svg">
+      </ion-avatar>
+      <ion-label></ion-label>
+    </ion-chip>
+  </ion-col>
+
+  <ion-col size="4">
+    <ion-chip style="height: 60px;width: 100px;--background: white;margin-left: 30px;">
+      <ion-label style="font-size: 20px;">+</ion-label>
+      <ion-avatar style="width: 20px;height: 40px;">
+        
+      </ion-avatar>
+      
+    </ion-chip>
+  </ion-col>
+
+  <ion-col size="3">
+    <ion-chip style="height: 60px;width: 100px;--background: white;">
+      <ion-avatar style="width: 120px;height: 80px;margin-right: 30px;">
+      <img src="https://www.startupwala.com/images/mobile_nav_10.png">
+      </ion-avatar>
+      </ion-chip>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+<br>
+
+  <ion-grid>
+  <ion-row>
+  <ion-col size="6">
+    <div>
+    <p style="font-size: 12px;margin-left: 5px;">Trademark Search with</p>
+    <p style="font-size: 12px;margin-top: 0em;margin-left: 5px;">Legal Report</p>
+    </div>
+    </ion-col>
+    
+    <ion-col size="6">
+      <p style="font-size: 12px;margin-left: 39px;">Get 10% Discount  </p>
+      <p style="font-size: 12px;margin-top: 0em;margin-left: 39px;">for 4 or more Application</p>
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+
+    </div>
+
+  <!--Special Recharge-->
+
+<div *ngIf="segmentModel === 'Benifits'">
+
+  <ion-list>
+    <ion-item lines="none">
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div>
+      <img src="https://www.startupwala.com/images/limited-liability-protection-to-directors-personal-assets.svg" 
+      style="height: 50px;width: 120px;margin-bottom: 0em;">
+      </div>
+      </ion-col>
+      <ion-col>
+      <div>
+      <p>Protection against Copycats</p>
+      </div>
+      </ion-col>
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+    style="margin-top: 25px;color: gray;">
+    </ion-icon>
+  </ion-row>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+    margin-bottom: 10px;text-align: justify;color: black;"> 
+        Nobody will dare to copy your brand name once it is a registered trademark
+    </p></h6>
+    </ion-item>
+
+      <ion-item lines="none">
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div>  
+      <img src="https://www.startupwala.com/images/better-image-and-credibility-in-market.svg">
+      </div>
+    </ion-col>
+    <ion-col>
+    <div>
+      <p>Registered brand is Most valuable asset of the Company</p>  
+      </div>
+     </ion-col>
+      <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'"
+      style="margin-top: 25px;color: gray;">
+      </ion-icon>
+      </ion-row>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+      margin-bottom: 10px;text-align: justify;color: black;"> 
+      Many brands in the world value their trademark more than their any other physical assets. Brand value 
+      is derived only when the company has absolute right over the brand name through trademark protection
+
+      </p></h6>
+      </ion-item>
+
+       <ion-item lines="none">
+      <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div>  
+      <img src="https://www.startupwala.com/images/easy-to-raise-funds-and-loans.svg">
+      </div>
+      </ion-col>
+      <ion-col>
+      <div>
+      <p>Helps in expansion of business and growth</p>
+      </div>
+      </ion-col>
+      <ion-icon [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+      style="margin-top: 25px;color: gray;">
+      </ion-icon>
+      </ion-row>
+      <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+      margin-bottom: 10px;text-align: justify;color: black;"> 
+      Trademark can be rented and royalty can be earned under licensing agreement. Franchising model solely
+       depends upon trademark licensing and transfer.
+      </p></h6>
+      </ion-item>
+
+      <ion-item lines="none">
+      <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+      <ion-row>
+      <ion-col size="3" style="margin-bottom: 10px;">
+      <div> 
+       <img src="https://www.startupwala.com/images/favorite-business-structure-for-investors.svg">
+      </div>
+    </ion-col>
+    <ion-col>
+    <div>
+      <p>Helps in image building and credibility in Market</p>
+      </div>
+      </ion-col>
+        <ion-icon [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'"
+        style="margin-top: 25px;color: gray;">
+        </ion-icon>
+        </ion-row>
+        <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 15px;margin-left: 10px;margin-right: 5px;
+        margin-bottom: 10px;text-align: justify;color: black;"> 
+       Customers give more preference to registered brands with TM tag
+       </p></h6>
+        </ion-item>
+    </ion-list>
+  </div>
+
+<!-- -------pre-req---- -->
+<div *ngIf="segmentModel === 'Pre-requisites'">
+  
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Minimum 2 shareholders</ion-label></div>
+
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Minimum 2 directors</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>The directors and shareholders can be
+<ion-text style="margin-left: 35px;">same person</ion-text></ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>One of the Directors must be Indian 
+  <ion-text style="margin-left: 35px;">Resident</ion-text></ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>DIN (Director Identification Number) <ion-text style="margin-left: 35px;">
+   for all Directors</ion-text></ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>DSC (Digital Signature Certificate) for 
+  <ion-text style="margin-left: 33px;">all Promoters</ion-text></ion-label></div>
+<br>
+</div>
+<!--delvrbles-->
+
+<div *ngIf="segmentModel === 'Deliverables'">
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>DIN for 2 Directors</ion-label></div>
+  <br>
+ 
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Digital Signature Token for all <ion-text style="margin-left: 30px;">Promoters</ion-text>
+  </ion-label></div>
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Company name approval</ion-label></div>
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>MOA + AOA</ion-label></div>  
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Incorporation Certificate</ion-label></div>
+  <br>
+
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>New Incorporation Kit</ion-label></div>
+<br>
+
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Customized Incorporation Master File</ion-label></div>
+   <br>
+   <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Company PAN Card</ion-label></div>
+      <br>
+
+      <div class="container" style="text-align: start;">
+        <ion-icon name="checkmark-circle-outline" 
+        style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+      <ion-label>Company TAN/TDS Number</ion-label></div>
+    <br>
+
+    <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Bank Account Opening Document 
+    <ion-text style="margin-left: 30px;">Support</ion-text></ion-label></div>
+    <br>
+    <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Domain Name for 1 year + Web
+      <ion-text style="margin-left: 30px;">Hosting + 0 Email Ids for 1 year OR</ion-text></ion-label></div>
+      <br>
+    
+    <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Online Accounting Software for 1 year</ion-label></div>
+     <br>
+     <br>
+</div>
+
+
+<div *ngIf="segmentModel === 'FAQs'" >
+
+  <ion-list>
+    <ion-card>
+    <ion-item >
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      1. What is Trademark?
+    <ion-icon [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+     style="color: gray;;font-size: 15px;">
+    </ion-icon>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+    margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+    Trademark is a logo, brand name, product name, website name, word or punch line by which customers
+     recognize or differentiate the products or services of one company from another.
+  </p></h6>
+    </ion-item>
+    </ion-card>
+
+      <ion-card>
+      <ion-item>
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+        2. Who can apply for Trademark Registration?
+      <ion-icon [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="color: gray;font-size: 15px;">
+      </ion-icon>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+      Any Individual Person, Company, Trust, NGO, even Govt. agency can apply for Trademark.
+      </p></h6>
+      </ion-item>
+      </ion-card>
+
+      <ion-card>
+      <ion-item>
+        <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+          3. What can be Trademarked?
+        <ion-icon [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+         style="color: gray;font-size: 15px;">
+        </ion-icon>
+        <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+        margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+            Business name, product name, website domain name, brand name, logo or slogan can be trademarked.
+
+        </p></h6>
+        </ion-item>
+        </ion-card>
+
+        <ion-card>
+        <ion-item>
+          <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+            4. What is trademark search?
+          <ion-icon [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+           style="color: gray;font-size: 15px;">
+          </ion-icon>
+          <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+          margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+        ademark search is done to check if the name to be registered is already taken by others or is closely similar to existing trademarks in trademark database. Proper trademark search is important in trademark registration process.
+      </p></h6>
+          </ion-item>
+          </ion-card>
+         
+          <ion-card>
+          <ion-item>
+            <h6 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;font-size: 13px;">
+              5. Who is a Trademark Consultant?
+            <ion-icon [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+             style="color: gray;font-size: 15px;">
+            </ion-icon>
+            <p *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+            margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+            Trademark consultant is a lawyer or attorney specialised in Trademark laws. They are also known
+             as Trademark Agents.
+
+            </p></h6>
+            </ion-item>
+            </ion-card>
+            
+            <ion-card>
+            <ion-item>
+              <h6 (click)="toggleGroup5(i)" [ngClass]="{active: isGroupShown5(i)}" style="color: black;font-size: 13px;">
+                6. Who is a Trademark Consultant? 
+              <ion-icon [name]="isGroupShown5(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+               style="color: gray;font-size: 15px;">
+              </ion-icon>
+              <p *ngIf="isGroupShown5(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+              margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+              Trademark Lawyer or Trademark Attorney specialised in Trademarkmark laws.They are also known 
+              as Tardemark Agents. 
+              </p></h6>
+              </ion-item>
+              </ion-card>
+              
+              <ion-card>
+              <ion-item>
+                <h6 (click)="toggleGroup6(i)" [ngClass]="{active: isGroupShown6(i)}" style="color: black;font-size: 13px;">
+                7. How to get a Trademark Protection?
+                <ion-icon [name]="isGroupShown6(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                 style="color: gray;font-size: 15px;">
+                </ion-icon>
+                <p *ngIf="isGroupShown6(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                Trademark Lawyer is an expert in trademark laws and trademark name registration process.
+                 Trademark attorney and lawyer is one and the same.
+
+                </p></h6>
+                </ion-item>
+                </ion-card>
+
+              
+             <ion-card>
+              <ion-item>
+              <h6 (click)="toggleGroup7(i)" [ngClass]="{active: isGroupShown7(i)}" style="color: black;font-size: 13px;">
+               8. What is the cost for Trademark Registration<ion-text style="margin-left:15px;"> in India?</ion-text>            
+            <ion-icon [name]="isGroupShown7(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+              style="color: gray;font-size: 15px;">
+              </ion-icon>
+            <p *ngIf="isGroupShown7(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+             margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                Government Fees for each trademark application is Rs. 4,500, Startupwala trademark 
+                consultant fees is Rs. 998.
+
+                </p></h6>
+                </ion-item>
+                </ion-card>
+              
+            
+            <ion-card>
+            <ion-item>
+            <h6 (click)="toggleGroup8(i)" [ngClass]="{active: isGroupShown8(i)}" style="color: black;font-size: 13px;">
+              9. How the Online Trademark Process works?
+            <ion-icon [name]="isGroupShown8(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+            style="color: gray;font-size: 15px;">
+            </ion-icon>
+            <p *ngIf="isGroupShown8(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+            margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+           Firstly detailed trademark check is conducted, after that one page authority letter is signed by
+            the owner, then the Consultant files the application with the trademark registry.
+            </p></h6>
+            </ion-item>
+            </ion-card>
+
+            <ion-card>
+              <ion-item>
+              <h6 (click)="toggleGroup9(i)" [ngClass]="{active: isGroupShown9(i)}" style="color: black;font-size: 13px;">
+                10. When can I use (TM) symbol?             
+                 <ion-icon [name]="isGroupShown9(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+              style="color: gray;font-size: 15px;">
+              </ion-icon>
+              <p *ngIf="isGroupShown9(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+              margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+              You can use (TM) mark as soon as the Trademark application is filed and you receive
+               acknowledgement receipt. (R) mark can be used once trademark is registered.
+              </p></h6>
+              </ion-item>
+              </ion-card>
+
+              <ion-card>
+                <ion-item>
+                <h6 (click)="toggleGroup10(i)" [ngClass]="{active: isGroupShown10(i)}" style="color: black;font-size: 13px;">
+                  11. Is it difficult to trademark?
+                  <ion-icon [name]="isGroupShown10(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                style="color: gray;font-size: 15px;">
+                </ion-icon>
+                <p *ngIf="isGroupShown10(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                Startupwala's online Trademark application process is very simple and economical. Our 
+                Clients regularly tell us that they thought trademark registration would have been very complex and 
+                costly affair but after experiencing Startupwala's 
+                service they felt that they should have done this much before. See what our clients want to say about us.
+                </p></h6>
+                </ion-item>
+                </ion-card>
+
+                <ion-card>
+                  <ion-item>
+                  <h6 (click)="toggleGroup11(i)" [ngClass]="{active: isGroupShown11(i)}" style="color: black;font-size: 13px;">
+                    12. What is Class of Trademark?
+                  <ion-icon [name]="isGroupShown11(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                  style="color: gray;font-size: 15px;">
+                  </ion-icon>
+                  <p *ngIf="isGroupShown11(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                  margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                  Knowing the correct class of trademark under which your brand name to be registered is the key element in successful trademark registration.
+                  In all, there are 45 classes in Trademark, in simple terms these are 45 different business segments. These classes are broadly divided into 3 categories.
+                  Manufacturing: Class 1 to 34
+                  Trading: Class 35
+                  Services: Class 35 to 45
+                  Identifying under which exact class your business/product/service falls is important.
+                  Wrong classification may lead to wrong trademark application and waste of time, money and
+                   losing of your brand name to your competitors.
+                  </p></h6>
+                  </ion-item>
+                  </ion-card>
+
+                  <ion-card>
+                    <ion-item>
+                    <h6 (click)="toggleGroup12(i)" [ngClass]="{active: isGroupShown12(i)}" style="color: black;font-size: 13px;">
+                      13. What is the time validity of trademark?
+                    <ion-icon [name]="isGroupShown12(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                    style="color: gray;font-size: 15px;">
+                    </ion-icon>
+                    <p *ngIf="isGroupShown12(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                    margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                    Trademark, the word is a combination of TRADE and MARK, means a mark which is used in 
+                    trade, commerce or business. If you close down your business, in legal sense, if you do
+                    not carry on any business under your trademark then it will cease to exist. However in
+                    practical sense the trademark registry will continue to show your trademark alive unless
+                    it is withdrawn by you or it expires after 10 years of registration, due to non-renewal.
+                    </p></h6>
+                    </ion-item>
+                    </ion-card>
+
+                    <ion-card>
+                      <ion-item>
+                      <h6 (click)="toggleGroup13(i)" [ngClass]="{active: isGroupShown13(i)}" style="color: black;font-size: 13px;">
+                      14. When should we renew the trademark <ion-text style="margin-left:20px;">registration?</ion-text>
+                      <ion-icon [name]="isGroupShown13(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                      style="color: gray;font-size: 15px;">
+                      </ion-icon>
+                      <p *ngIf="isGroupShown13(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                      margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                     Every 10 years the trademark to be renewed, so that you can use your trademark for 
+                     indefinite time.
+                      </p></h6>
+                      </ion-item>
+                      </ion-card>
+
+                      <ion-card>
+                        <ion-item>
+                        <h6 (click)="toggleGroup14(i)" [ngClass]="{active: isGroupShown14(i)}" style="color: black;font-size: 13px;">
+                          15. Can I sell my trademark?                        
+                        <ion-icon [name]="isGroupShown14(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                        style="color: gray;font-size: 15px;">
+                        </ion-icon>
+                        <p *ngIf="isGroupShown14(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                        margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                       Yes, As we know that trademark is an intellectual property of the owner, as other
+                        property can be sold for a price, the same way a trademark can be sold for a price.
+                        </p></h6>
+                        </ion-item>
+                      </ion-card>
+                      <br>
+                      <br>
+
+          </ion-list>
+          </div>
+
+</ion-content>
+
+
+

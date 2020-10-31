@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Compliance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment scrollable value="heart"
+    mode="Android"
+
+    (ionChange)="segmentChanged($event)"
+    [(ngModel)]="segmentModel" full="true" >
+
+    <ion-segment-button value="home">
+      <ion-icon name="home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="heart">
+      <ion-icon name="heart"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      <ion-icon name="pin"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="star">
+      <ion-icon name="star"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <div ng-switch="segmentModel">
+
+    <ion-list ng-switch-when="heart">
+      <p>fdgfg</p>
+    </ion-list>
+
+    <ion-list ng-switch-when="pin">
+      <p>trey</p>
+    </ion-list>
+
+  </div>
+
+</ion-content>
