@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UserprofilePageRoutingModule } from './userprofile-routing.module';
+import { StoreimgPageRoutingModule } from './storeimg-routing.module';
 
-import { UserprofilePage } from './userprofile.page';
+import { StoreimgPage } from './storeimg.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    UserprofilePageRoutingModule
+    ReactiveFormsModule,
+    StoreimgPageRoutingModule
   ],
-  declarations: [UserprofilePage]
+  declarations: [StoreimgPage]
 })
-export class UserprofilePageModule {}
+export class StoreimgPageModule {}

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-row>
+ 
+    <ion-col text-center>
+      <ion-button (click)="captureImage()" >Capture&nbsp;
+        <ion-icon name="camera" >Camera</ion-icon>
+      </ion-button>
+      
+    </ion-col>
+  </ion-row>
+  <img [src]="clickedImage" />
+  
+  <div class="ion-padding">
+    <ion-button (click)="pickFile()" expand="full" color="dark">PickFile</ion-button>  
+  <div>
+    {{returnpath}}
+  </div>
+  </div>
+
+  
+       
+
+</ion-content>

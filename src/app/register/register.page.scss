@@ -12,20 +12,10 @@
  
 border-radius: 0em;
   }
-.login-header:after{
-content: ' ' ;
-position: absolute;
-bottom:0;
-left:15%;
-width:0;
-height:0;
-border:20px solid transparent;
+
 
 //border-top-color: var(--theme-color);
-border-bottom: 0;
-margin-left: -15px;
-margin-bottom:-15px;
-}
+
 [heading-column-lr]{
 display: flex;
 -ms-flex-align: center;
@@ -34,8 +24,8 @@ align-items: center;
 [big-heading] {
   font-family: "Heebo-Bold"!important;
   font-size: 30px !important;
-  color: black;
-  margin: 0px 0px 60px 40px;
+  align-items: center;
+  margin: 0 auto;
 }
 ion-item {
   ion-input{
@@ -44,36 +34,29 @@ ion-item {
   }
 }
 
+ion-icon{
+  color: blue;
+}
 
-
-ion-content
-  {
+ion-content{
     
-    --background: linear-gradient(#2193b0,#6dd5ed);
   }
   .login-header{
     --background: linear-gradient(#2193b0,#6dd5ed);
   }
-  ion-button{
-    --background:#6dd5ed;
-    width: 50%;
-    /* position: absolute; */
-    left: 24%;
-    top: 81%;
-    position: absolute!important;
-   }
+  
 
 [small-heading]{
   font-family:'Lato', sans-serif !important; 
   margin-left:auto;padding-right:40px;font-size: 15px;
 }
 .logo-img{
-  width: 11em;
-  height: 6em;
+  width: 13em;
+  height: 7em;
   align-items: center;
   position: absolute;
-  left: 26%;
-  margin: 17px 0px 0px auto;
+  left: 15%;
+  margin: 0 auto;
 }
 
 [transparent]{
@@ -94,9 +77,6 @@ ion-input{
   width:20px;
   margin: 0 0 0 18px;
 }
-ion-icon{
-  color: #000;
-}
 ion-item{
   --highlight-color-focused:transparent;
   --highlight-height:0;
@@ -115,11 +95,9 @@ ion-label{
   font-size:10px;
   font-weight:bold;
   display: block;
-  padding: 18px 0px 0px 5px;
-
 }
 span{
-  font-size: 10px;
+  font-size: 12px;
   color: #fb3434;
     font-weight: bold;
      text-align: inherit;
@@ -133,8 +111,6 @@ span{
   font-weight:bold;
   padding:10px;
 }
-
-
 
 ion-page.register > ion-content{
   background-color: transparent;
@@ -151,9 +127,8 @@ ion-page.register > ion-content{
 .fix-bottom-button {
 position: fixed;
 bottom: 0px;
-
-
 }
+
 @media(min-height:320px){
   .center{
     position: fixed;

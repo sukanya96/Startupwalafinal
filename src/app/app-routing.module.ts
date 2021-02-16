@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'details',
     pathMatch: 'full'
   },
   {
@@ -176,6 +176,18 @@ const routes: Routes = [
   {
     path: 'chgaddr',
     loadChildren: () => import('./chgaddr/chgaddr.module').then( m => m.ChgaddrPageModule)
+  },
+  {
+    path: 'reg',
+    loadChildren: () => import('./reg/reg.module').then( m => m.RegPageModule)
+  },
+  {
+    path: 'details',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'storeimg',
+    loadChildren: () => import('./storeimg/storeimg.module').then( m => m.StoreimgPageModule)
   }
 ];
 

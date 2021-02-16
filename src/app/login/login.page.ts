@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertController, MenuController, ModalController, NavController } from '@ionic/angular';
+import { AlertController, MenuController, ModalController, NavController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Login } from '../Models/class';
+import { SevicefileService } from '../sevicefile.service';
+
 
 
 @Component({
@@ -17,28 +20,23 @@ export class LoginPage implements OnInit {
   public formValid = true;
   showMsg: boolean = false;
   isSubmitted = false;
-  password_type: string = 'password';
-
+  public data: Login = new Login;
+  
   constructor(public fb: FormBuilder, private alertCtrl: AlertController,
-    private modalCtrl: ModalController, private myRoute: Router,
-    private menu: MenuController,private nav:NavController) { 
-      this.menu.enable(false, "custom");                   //
+    private modalCtrl: ModalController, private myRoute: Router,public servicefile:SevicefileService,
+    private menu: MenuController,private nav:NavController,public platform:Platform ) { 
+    this.menu.enable(false, "custom");                   
 
     this.formcontrol = this.fb.group({
     email: ['', [Validators.required,Validators.pattern("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")]],
-    password: ['', [Validators.required,(Validators.maxLength(10)), 
-      (Validators.minLength(6))]],
-    roles: this.fb.array(['USER']),
-   });
-
+    // password: ['', [Validators.required,(Validators.maxLength(10)), 
+    //   (Validators.minLength(6))]],
+  });
+    
   }
   
-
-  togglePasswordMode() {   
-    this.password_type = this.password_type === 'text' ? 'password' : 'text';
- }
-  
   ngOnInit() {
+    this.login();
     this.valid=false;
     this.errmsg=false;
     this.isSubmitted = false;
@@ -49,18 +47,48 @@ export class LoginPage implements OnInit {
     return this.formcontrol.controls;
   }
 
-  login() {
-      this.isSubmitted = true;
-      if (!this.formcontrol.valid) {
-        console.log('Please provide all the required values!')
-        return false;
-      } else {
-        console.log(this.formcontrol.value)
-      }
-      {
+  
+
+  login(){
+   
+    this.isSubmitted = true;
+    this.formcontrol.get("email").setValidators(Validators.required);
+   this.formcontrol.get("email").updateValueAndValidity();
+    if (!this.formcontrol.valid) {
+      return false;
+   }
+   else{
+    if (this.formcontrol.valid) 
+   {
+    Object.assign(this.data, this.formcontrol.value);
+    console.log(this.data);
+    this.servicefile.login(this.data).subscribe((result) => {
+   console.log('object');
+      if (result === undefined) {
+        console.log(result);
+        this.errmsg = true;
+    alert('service didnt proceed');
+       }
+       else {
+       this.servicefile.sendToken(result.accessToken);
+        this.myRoute.navigate(['/dashboard']);
         this.formcontrol.reset();
-       
-            this.myRoute.navigate(['/dashboard']);
-          }
-    }
+       }
+    }, (err) => {
+  alert('failed to login');
+      console.log(err);
+     
+    });
+   }
+   else {
+    this.valid = true;
+    // this.formcontrol.reset();
+  }
+  
+}
+  
+  }
+  
+  
+ 
 }

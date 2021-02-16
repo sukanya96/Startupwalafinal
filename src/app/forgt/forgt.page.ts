@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { ModalController, AlertController } from '@ionic/angular';
-import { Forgot } from '../Model/class';
+//import { Forgot } from '../app/Models/class';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,17 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./forgt.page.scss'],
 })
 export class ForgtPage implements OnInit {
-  public formcontrol : FormGroup;
+  /*public formcontrol : FormGroup;
   public formValid = true;
   showMsg: boolean = false;
   valid: boolean;
   isSubmitted = false;
   errmsg: any;
-  public data: Forgot = new Forgot();
+  public data: Forgot = new Forgot();*/
 
   constructor(public fb: FormBuilder , private alertCtrl: AlertController,
     private myRoute: Router, private modalCtrl: ModalController,) {
-    this.formcontrol = this.fb.group({
+   /* this.formcontrol = this.fb.group({
    
       email: ["", [Validators.required, 
       Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -45,15 +45,16 @@ export class ForgtPage implements OnInit {
       this.modalCtrl.dismiss();
 
       
-    });
+    });*/
   }
   
   ngOnInit() {
-    this.valid=false;
+    /*this.valid=false;
     this.errmsg=false;
     this.isSubmitted = false;
+    */
   }
-  reset()
+  /*reset()
   {
     
     this.isSubmitted = true;
@@ -70,6 +71,7 @@ export class ForgtPage implements OnInit {
  
 }
     }
-  }
+  }*/
+  
 
 }

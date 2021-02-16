@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>storeimg</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="images"> 
+    <ion-card mode="ios">
+          <ion-card-content>
+          <ion-row>
+            <ion-col *ngFor="let img of images">
+            <img src={{img}}>
+            </ion-col>
+          </ion-row>
+          </ion-card-content>
+        </ion-card>
+    </div>
+    <!-- NOT DISPLAYING -->
+
+    <ion-row>
+ 
+      <ion-col text-center>
+        <ion-button (click)="captureImage()" >Capture&nbsp;
+          <ion-icon name="camera" >Camera</ion-icon>
+        </ion-button>
+        
+      </ion-col>
+    </ion-row>
+    <img [src]="clickedImage" />
+    
+    
+    <!-- <div *ngIf="!images == images" >Please Choose Images</div> 
+    
+  
+        <ion-button (click)="PickfromCamera()">Capture&nbsp;
+          <ion-icon name="camera">Camera</ion-icon>
+        </ion-button>-->
+       .
+    <ion-footer color="success">
+      <ion-button color="success" expand="block" (click)="add()" class="ion-text-center">POST</ion-button>
+    </ion-footer>
+
+</ion-content>

@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import {CategoryService} from '../category.service';
+//import {CategoryService} from '../category.service';
 import {Router} from '@angular/router';
 
 
@@ -25,7 +25,7 @@ export class DemoPage implements OnInit {
   public searchTerm: string = "";
 
 
-  constructor(private categoryservice:CategoryService, private router:Router) {
+  constructor( private router:Router) {
 
   
   

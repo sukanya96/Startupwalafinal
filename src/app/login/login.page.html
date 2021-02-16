@@ -1,22 +1,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-
 <ion-header>
- 
+
   <div class="login-header" ion-padding>
+  <img class="logo-img extra" src="..//../assets/Artboard 1.png" style="margin-top: 20px;">
+  </div>
 
-    <img class="logo-img extra" src="..//../assets/Artboard 1.png" style="margin-top: 20px;">
-    </div>
 </ion-header>
-
 
 <ion-content>
 
   <form [formGroup]="formcontrol" (ngSubmit)="login()">
   <div class="center">
- <div heading-column-lr >
+  <div heading-column-lr>
   <h1 big-heading style="color: blue;margin-top: 60px;">Login</h1>  
-    </div> 
+  </div> 
     
 <!-- ------------------Email------------- -->
     <ion-item transparent style="margin-top: 30px;">
@@ -35,7 +33,7 @@
       Please enter valid email
     </span>
 
-    <ion-item transparent>
+    <!-- <ion-item transparent>
       
       <ion-icon name="person-circle"></ion-icon>
 
@@ -55,16 +53,18 @@
    
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.maxLength">
       password should be greater than 6
-    </span>
-
+    </span> -->
     
    <ion-button class="ion-button-class" expand="block" side="bottom"
-   (click)="login()" style="margin-top: 120px;--background:blue;">Get OTP</ion-button> 
+   (click)="login()" style="margin-top: 120px;--background:blue;">Login</ion-button> 
 
   <ion-label class="ion-text-center" style="font-size: 12px;color: blue;">Don't have Account ?
-    <span class="link-button" (click)="Register()" [routerLink]="['/register']" style="color: red;font-size: 12px;">SIGN UP
-  </span></ion-label>
+  <span class="link-button" [routerLink]="['/reg']" 
+  style="color: red;font-size: 12px;">SIGN UP
+  </span>
+  </ion-label>
   </div>
-</form>
+  </form>
+
 </ion-content>
 
